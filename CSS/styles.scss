@@ -1,0 +1,59 @@
+$Color-Catch : #9356DC;
+$Color-Gradient : linear-gradient(130deg, rgba(234,114,218,1) 0%, rgba(161,91,220,1) 67%);
+
+@mixin flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  margin: 0%;
+  padding: 0%;
+  font-family: 'Raleway', sans-serif;
+}
+
+header {
+  @include flex;
+  img {
+    height: 30px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+}
+
+.Localisation {
+  @include flex;
+  gap: 15px;
+  background-color : #EAEAEA;
+  box-shadow: inset 0px 12px 14px -12px rgba(0,0,0,0.67);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.Bienvenue {
+  @include flex; 
+  flex-direction: column;
+  margin: 0px 30px 0px 30px;
+  text-align: center;
+  h1 {
+    margin: 40px 50px 0px 50px;
+    font-size: 20px;
+    font-weight: 800;
+  }
+  h2{
+    margin: 20px 20px 0px 20px;
+    font-size: 15px;
+    font-weight: 400;
+  }
+  &__Explorer {
+    margin: 30px 20px 60px 20px;
+    width: 220px;
+    height: 50px;
+    border-radius: 50px;
+    border: none;
+    background: linear-gradient(130deg, rgba(234,114,218,1) 0%, rgba(161,91,220,1) 67%);
+    color: #EAEAEA;
+    box-shadow: 5px 3px 14px 1px rgba(0,0,0,0.42);
+  }
+}
