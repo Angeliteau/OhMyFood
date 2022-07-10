@@ -1,15 +1,11 @@
-$ColorPrimaire : #9356DC;
-$ColorSecondaire : #FF79DA;
-$ColorTertiaire : #99E2D0;
-$BoxShadow : 5px 3px 14px 1px rgba(0,0,0,0.42);
-
-@import "mixin.scss";
+@import "_variables.scss";
+@import "_mixin.scss";
+@import "_menu.scss";
 
 @keyframes Heart {
   0%    { opacity: 0; 
           transform:scale(0) }
-  80%    {  
-          transform:scale(1.15) }
+  80%    {  transform:scale(1.15) }
   100%  { opacity: 1;
           transform:scale(1)  }
 }
@@ -19,6 +15,7 @@ $BoxShadow : 5px 3px 14px 1px rgba(0,0,0,0.42);
 body {
   margin: auto;
   padding: auto;
+  min-width: 375px;
   max-width: 1440px;
   font-family: 'Raleway', sans-serif;
   box-sizing: border-box;
@@ -26,7 +23,8 @@ body {
 }
 
 header {
-  @include flex;
+  display: flex;
+  justify-content: center;
   img {
     height: 30px;
     margin-top: 20px;
@@ -44,6 +42,7 @@ header {
   border: none;
   font-size: 15px;
   font-weight: 600;
+  cursor: pointer;
 }
 
 .Bienvenue {
@@ -75,7 +74,7 @@ header {
     box-shadow: $BoxShadow;
   }
   &__Boutton:hover {
-    background: linear-gradient(130deg, rgba(230,144,218,1) 0%, rgba(172,116,219,1) 67%);
+    background: linear-gradient(130deg, rgb(235, 132, 221) 0%, rgb(167, 101, 221) 67%);
     box-shadow: 7px 5px 16px 3px rgba(0,0,0,0.42);
   }
 }
@@ -89,7 +88,6 @@ header {
 .Fonctionnement {
   display: flex;
   flex-wrap: wrap;
-  justify-content:flex-start;
   gap: 25px;
   margin: 30px 20px 70px 20px;
   &__Choisissez {
@@ -100,7 +98,7 @@ header {
     height: 75px;
     min-width: 320px;
     flex: 1 1 auto;
-    margin-left: 30px;
+    margin-left: 10px;
     box-shadow: 4px 4px 2px #F6F6F6;
     border-radius: 20px;
     &__Card {
@@ -135,7 +133,6 @@ header {
 
 .Wrap {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
   width: 100%;
   gap: 15px;
@@ -154,12 +151,18 @@ header {
     height: auto;
     background-color: #FFFFFF;
     border-radius: 10px;
-    box-shadow: 4px 4px 2px #F6F6F6;
+    box-shadow: $BoxShadow;
+    text-decoration: none;
+    color: #000000;
+    transform: scale(1);
     img {
       height: 175px;
       width: 100%;
       object-fit: cover;
       border-radius: 10px 10px 0px 0px;
+    }
+    &:hover {
+      transform: scale(1.05);
     }
   &__Instructions {
     display: flex;
@@ -202,6 +205,7 @@ header {
   }
 Footer {
   width: 100%;
+  margin: auto;
   background-color: #353535;
   padding-bottom: 35px;
   img {

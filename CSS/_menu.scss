@@ -1,0 +1,220 @@
+
+
+.ImageTop {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+.BoutonRetour {
+    border: none;
+    background-color: #FFFFFF;
+    position: relative;
+    right: 80px;
+    cursor: pointer;
+    
+}
+.WrapMenu {
+    max-width: 900px;
+    margin: auto;
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    background-color: #F6F6F6;
+    padding: 40px 12px 15px 12px;
+    border-radius: 40px 40px 0px 0px;
+    transform: translateY(-80px);
+
+    &__Top {
+        width: 100%;
+        margin: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        h1 {
+            margin: 0px;
+            font-family: 'Shrikhand', cursive;
+        }
+        &__Like {
+            margin-right: 25px;
+            position: relative;
+            i {
+              position: absolute;
+              right: 0px;
+              bottom: -10px;
+            }
+            }
+            .fa {
+              opacity: 0;
+              background: -webkit-linear-gradient($ColorPrimaire, $ColorSecondaire);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              cursor: pointer;
+              
+            }
+            .fa:hover {
+              opacity: 1;
+              animation: Heart 300ms ease-in-out;
+            }
+    }
+
+    .TitrePlat {
+        width: 50px;
+        border-bottom:2px solid $ColorTertiaire;
+        padding-bottom: 6px;
+        margin: 28px 0px 0px 5px;
+        text-transform: uppercase;
+        font-weight: 400;
+        
+    }
+
+
+
+
+    .Entrees {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 65px;
+        background-color: #FFFFFF;
+        box-shadow: $BoxShadow;
+        border-radius: 15px;
+        padding: 12px 0px 12px 10px;
+        overflow: hidden;
+
+
+        &:nth-child(3) {
+            animation: LoadingPage 1s backwards ease-in-out;
+        }
+        &:nth-child(4) {
+            animation: LoadingPage 1s 300ms backwards ease-in-out;
+        }
+        &:nth-child(5) {
+            animation: LoadingPage 1s 400ms backwards ease-in-out;
+        }
+        &:nth-child(7) {
+            animation: LoadingPage 1s 500ms backwards ease-in-out;
+        }
+        &:nth-child(8) {
+            animation: LoadingPage 1s 600ms backwards ease-in-out;
+        }
+        &:nth-child(9) {
+            animation: LoadingPage 1s 700ms backwards ease-in-out;
+        }
+        &:nth-child(11) {
+            animation: LoadingPage 1s 800ms backwards ease-in-out;
+        }
+        &:nth-child(12) {
+            animation: LoadingPage 1s 900ms backwards ease-in-out;
+        }
+        &:nth-child(13) {
+            animation: LoadingPage 1s 1000ms backwards ease-in-out;
+        }
+
+        &__Texte {
+              
+
+            white-space: nowrap; 
+            min-width: 0%;
+        }
+        
+        &__Texte h3 {
+            margin: 5px 0px 0px 0px;
+            width: 100%;
+     
+
+        }
+        &__Texte h4 {
+            margin: 10px  0px 15px 0px;
+            font-weight: 500;
+
+        }
+        
+        &__Prix {
+            display: flex;
+            align-items: center;
+            
+            transform: translateX(100px);
+            transition: all 300ms ease-in-out;
+            
+            p {
+                background-color: #FFFFFF;
+                padding: 30px 25px 0px 25px;
+                font-weight: 600;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .Check {
+                @include flex;
+                background-color: $ColorTertiaire;
+                height: 100%;
+                width: 100px;
+                margin: 0px;
+                padding: 20px 0px;
+                transform: translateX(100px);
+                transition: all 300ms ease-in-out;
+            }
+            i {
+                color: #FFFFFF;
+                transition: all 400ms ease-in-out;
+            }
+
+
+              
+        }
+    &:hover .Check {
+        transform: translateX(0px);
+    }
+    &:hover .Entrees__Prix {
+        transform: translateX(0px);
+    }
+    &:hover i {
+        transform: rotate(360deg);
+    }
+    &:hover h3 {
+        animation: Text 300ms ease-in-out both;
+    }
+    &:hover h4 {
+        animation: Text 300ms ease-in-out both;
+    }
+
+    }
+    .Commander__Boutton {
+        width: 180px;
+        height: 50px;
+        margin: 50px auto 80px auto;
+        border-radius: 50px;
+        border: none;
+        font-weight: 600;
+        background: linear-gradient(130deg, rgba(234,114,218,1) 0%, rgba(161,91,220,1) 67%);
+        color: #EAEAEA;
+        box-shadow: $BoxShadow;
+      }
+      .Commander__Boutton:hover {
+        background: linear-gradient(130deg, rgba(230,144,218,1) 0%, rgba(172,116,219,1) 67%);
+        box-shadow: 7px 5px 16px 3px rgba(0,0,0,0.42);
+      }
+
+}
+
+@keyframes LoadingPage {
+    0% {
+    
+            opacity: 0;
+     
+    }
+    100% {
+    
+            opacity: 1;
+        
+    }
+}
+
+@keyframes Text {
+    0% {text-overflow:clip;
+        overflow: visible;
+    }
+    100% {
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+}
