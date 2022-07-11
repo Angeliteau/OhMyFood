@@ -1,15 +1,7 @@
 @import "_variables.scss";
 @import "_mixin.scss";
 @import "_menu.scss";
-
-@keyframes Heart {
-  0%    { opacity: 0; 
-          transform:scale(0) }
-  80%    {  transform:scale(1.15) }
-  100%  { opacity: 1;
-          transform:scale(1)  }
-}
-
+@import "_keyframes.scss";
 
 
 body {
@@ -20,6 +12,10 @@ body {
   font-family: 'Raleway', sans-serif;
   box-sizing: border-box;
   counter-reset: compteListe;
+}
+
+.Loader {
+  @include Loader;
 }
 
 header {
@@ -74,8 +70,7 @@ header {
     box-shadow: $BoxShadow;
   }
   &__Boutton:hover {
-    background: linear-gradient(130deg, rgb(235, 132, 221) 0%, rgb(167, 101, 221) 67%);
-    box-shadow: 7px 5px 16px 3px rgba(0,0,0,0.42);
+    @include BoutonPrincipaleHover;
   }
 }
 
@@ -106,22 +101,13 @@ header {
     }
     &::before {
       @include flex;
-      counter-increment: compteListe 1;
-      content: counter(compteListe) " ";
-      color: #F6F6F6;
-      position:relative;
-      padding-bottom: 2px;
-      height: 25px;
-      width: 25px;
-      left: -12px;
-      border-radius: 50%;
-      background-color: $ColorPrimaire;
+      @include FonctionnementCercleCompteur;
     }
   &:hover {
-    background-color: lighten($ColorPrimaire, 35%);
+    @include FonctionnementCouleurHover;
   }
   &:hover i {
-    color: $ColorPrimaire;
+    @include FonctionnementCouleurImageHover;
   }
   }
   .Text {
@@ -162,7 +148,7 @@ header {
       border-radius: 10px 10px 0px 0px;
     }
     &:hover {
-      transform: scale(1.05);
+      @include TransformHoverArticle;
     }
   &__Instructions {
     display: flex;
@@ -188,21 +174,12 @@ header {
         bottom: -10px;
       }
       }
-      .fa {
-        opacity: 0;
-        background: -webkit-linear-gradient($ColorPrimaire, $ColorSecondaire);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        cursor: pointer;
-        
-      }
-      .fa:hover {
-        opacity: 1;
-        animation: Heart 300ms ease-in-out;
-      }
+      @include AnimationCoeur;
     }
   }
   }
+
+
 Footer {
   width: 100%;
   margin: auto;
@@ -231,4 +208,3 @@ Footer {
   }
   }
 }
-

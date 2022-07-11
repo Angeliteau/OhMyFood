@@ -3,6 +3,8 @@
   height: 260px;
   -o-object-fit: cover;
      object-fit: cover;
+  position: relative;
+  z-index: -1;
 }
 
 .BoutonRetour {
@@ -14,16 +16,17 @@
 }
 
 .WrapMenu {
+  position: relative;
   max-width: 900px;
   margin: auto;
   width: auto;
   display: flex;
   flex-wrap: wrap;
+  margin-top: -80px;
   gap: 12px;
   background-color: #F6F6F6;
   padding: 40px 12px 15px 12px;
   border-radius: 40px 40px 0px 0px;
-  transform: translateY(-80px);
 }
 .WrapMenu__Top {
   width: 100%;
@@ -33,7 +36,7 @@
   justify-content: space-between;
 }
 .WrapMenu__Top h1 {
-  margin: 0px;
+  margin: 0px 0px 0px 10px;
   font-family: "Shrikhand", cursive;
 }
 .WrapMenu__Top__Like {
@@ -54,8 +57,8 @@
 }
 .WrapMenu__Top .fa:hover {
   opacity: 1;
-  -webkit-animation: Heart 300ms ease-in-out;
-          animation: Heart 300ms ease-in-out;
+  -webkit-animation: Heart 200ms ease-out;
+          animation: Heart 200ms ease-out;
 }
 .WrapMenu .TitrePlat {
   width: 50px;
@@ -75,42 +78,20 @@
   border-radius: 15px;
   padding: 12px 0px 12px 10px;
   overflow: hidden;
-}
-.WrapMenu .Entrees:nth-child(3) {
   -webkit-animation: LoadingPage 1s backwards ease-in-out;
           animation: LoadingPage 1s backwards ease-in-out;
 }
-.WrapMenu .Entrees:nth-child(4) {
-  -webkit-animation: LoadingPage 1s 300ms backwards ease-in-out;
-          animation: LoadingPage 1s 300ms backwards ease-in-out;
+.WrapMenu .Entrees--delay2 {
+  -webkit-animation-delay: 100ms;
+          animation-delay: 100ms;
 }
-.WrapMenu .Entrees:nth-child(5) {
-  -webkit-animation: LoadingPage 1s 400ms backwards ease-in-out;
-          animation: LoadingPage 1s 400ms backwards ease-in-out;
+.WrapMenu .Entrees--delay3 {
+  -webkit-animation-delay: 200ms;
+          animation-delay: 200ms;
 }
-.WrapMenu .Entrees:nth-child(7) {
-  -webkit-animation: LoadingPage 1s 500ms backwards ease-in-out;
-          animation: LoadingPage 1s 500ms backwards ease-in-out;
-}
-.WrapMenu .Entrees:nth-child(8) {
-  -webkit-animation: LoadingPage 1s 600ms backwards ease-in-out;
-          animation: LoadingPage 1s 600ms backwards ease-in-out;
-}
-.WrapMenu .Entrees:nth-child(9) {
-  -webkit-animation: LoadingPage 1s 700ms backwards ease-in-out;
-          animation: LoadingPage 1s 700ms backwards ease-in-out;
-}
-.WrapMenu .Entrees:nth-child(11) {
-  -webkit-animation: LoadingPage 1s 800ms backwards ease-in-out;
-          animation: LoadingPage 1s 800ms backwards ease-in-out;
-}
-.WrapMenu .Entrees:nth-child(12) {
-  -webkit-animation: LoadingPage 1s 900ms backwards ease-in-out;
-          animation: LoadingPage 1s 900ms backwards ease-in-out;
-}
-.WrapMenu .Entrees:nth-child(13) {
-  -webkit-animation: LoadingPage 1s 1000ms backwards ease-in-out;
-          animation: LoadingPage 1s 1000ms backwards ease-in-out;
+.WrapMenu .Entrees--delay4 {
+  -webkit-animation-delay: 300ms;
+          animation-delay: 300ms;
 }
 .WrapMenu .Entrees__Texte {
   white-space: nowrap;
@@ -185,21 +166,95 @@
   box-shadow: 7px 5px 16px 3px rgba(0, 0, 0, 0.42);
 }
 
-@-webkit-keyframes LoadingPage {
+@-webkit-keyframes Heart {
   0% {
     opacity: 0;
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.15);
   }
   100% {
     opacity: 1;
+    transform: scale(1);
   }
 }
 
-@keyframes LoadingPage {
+@keyframes Heart {
   0% {
     opacity: 0;
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.15);
   }
   100% {
     opacity: 1;
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes Loader {
+  0% {
+    z-index: 100;
+    opacity: 1;
+  }
+  90% {
+    z-index: 100;
+    opacity: 0.8;
+  }
+  100% {
+    z-index: -1;
+    opacity: 0;
+  }
+}
+@keyframes Loader {
+  0% {
+    z-index: 100;
+    opacity: 1;
+  }
+  90% {
+    z-index: 100;
+    opacity: 0.8;
+  }
+  100% {
+    z-index: -1;
+    opacity: 0;
+  }
+}
+@-webkit-keyframes Jump {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+@keyframes Jump {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+@-webkit-keyframes LoadingPage {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@keyframes LoadingPage {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
   }
 }
 @-webkit-keyframes Text {
@@ -222,32 +277,6 @@
     overflow: hidden;
   }
 }
-@-webkit-keyframes Heart {
-  0% {
-    opacity: 0;
-    transform: scale(0);
-  }
-  80% {
-    transform: scale(1.15);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-@keyframes Heart {
-  0% {
-    opacity: 0;
-    transform: scale(0);
-  }
-  80% {
-    transform: scale(1.15);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
 body {
   margin: auto;
   padding: auto;
@@ -256,6 +285,46 @@ body {
   font-family: "Raleway", sans-serif;
   box-sizing: border-box;
   counter-reset: compteListe;
+}
+
+.Loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: #FFFFFF;
+  left: 0px;
+  opacity: 1;
+  -webkit-animation: Loader 2s forwards;
+          animation: Loader 2s forwards;
+}
+.Loader__Wrap {
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+}
+.Loader__Wrap__Dot {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+.Loader__Wrap__Dot:nth-child(1) {
+  background-color: #9356DC;
+  -webkit-animation: Jump 500ms alternate infinite ease-in-out;
+          animation: Jump 500ms alternate infinite ease-in-out;
+}
+.Loader__Wrap__Dot:nth-child(2) {
+  background-color: #FF79DA;
+  -webkit-animation: Jump 500ms 200ms alternate infinite ease-in-out;
+          animation: Jump 500ms 200ms alternate infinite ease-in-out;
+}
+.Loader__Wrap__Dot:nth-child(3) {
+  background-color: #99E2D0;
+  -webkit-animation: Jump 500ms 400ms alternate infinite ease-in-out;
+          animation: Jump 500ms 400ms alternate infinite ease-in-out;
 }
 
 header {
@@ -446,8 +515,8 @@ header img {
 }
 .Wrap .Card__Instructions .fa:hover {
   opacity: 1;
-  -webkit-animation: Heart 300ms ease-in-out;
-          animation: Heart 300ms ease-in-out;
+  -webkit-animation: Heart 200ms ease-out;
+          animation: Heart 200ms ease-out;
 }
 
 Footer {
