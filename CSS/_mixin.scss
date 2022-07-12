@@ -4,6 +4,19 @@
     justify-content: center;
   }
 
+  @mixin BoutonPrincipale {
+    margin: 30px auto 60px auto;
+    width: 220px;
+    height: 50px;
+    border-radius: 50px;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    background: linear-gradient(130deg, rgba(234,114,218,1) 0%, rgba(161,91,220,1) 67%);
+    color: #EAEAEA;
+    box-shadow: $BoxShadow;
+  }
+
   @mixin BoutonPrincipaleHover {
     background: linear-gradient(130deg, rgb(235, 132, 221) 0%, rgb(167, 101, 221) 67%);
     box-shadow: 7px 5px 16px 3px rgba(0,0,0,0.42);
@@ -31,14 +44,14 @@
   }
 
   @mixin TransformHoverArticle {
-    transform: scale(1.05);
+    transform: scale(1.02);
   }
 @mixin AnimationCoeur {
   .fa {
     opacity: 0;
-    background: -webkit-linear-gradient($ColorPrimaire, $ColorSecondaire);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background: linear-gradient($ColorPrimaire, $ColorSecondaire);
+    background-clip: content-box;
+    color: transparent;
     cursor: pointer;
     
   }

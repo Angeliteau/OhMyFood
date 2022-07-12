@@ -6,14 +6,14 @@
 
 body {
   margin: auto;
-  padding: auto;
   min-width: 375px;
+  font-family: 'Raleway';
   max-width: 1440px;
-  font-family: 'Raleway', sans-serif;
   box-sizing: border-box;
   counter-reset: compteListe;
 }
 
+/* LOADER CHARGEMENT PAGE */
 .Loader {
   @include Loader;
 }
@@ -28,6 +28,7 @@ header {
   }
 }
 
+/* BOUTON LOCALISATION DU DEVICE */
 .Localisation__Boutton {
   @include flex;
   width: 100%;
@@ -41,6 +42,7 @@ header {
   cursor: pointer;
 }
 
+/* ENCART DE BIENVENUE */
 .Bienvenue {
   @include flex; 
   flex-direction: column;
@@ -58,24 +60,16 @@ header {
     font-weight: 400;
   }
   &__Boutton {
-    margin: 30px 20px 60px 20px;
-    width: 220px;
-    height: 50px;
-    border-radius: 50px;
-    border: none;
-    font-size: 14px;
-    font-weight: 600;
-    background: linear-gradient(130deg, rgba(234,114,218,1) 0%, rgba(161,91,220,1) 67%);
-    color: #EAEAEA;
-    box-shadow: $BoxShadow;
+    @include BoutonPrincipale;
   }
   &__Boutton:hover {
     @include BoutonPrincipaleHover;
   }
 }
 
+/* ENCART FONCTIONNEMENT */
 .Fonctionnement__Titre {
-  font-weight: 700;
+  font-weight: 800;
   margin: 0px;
   width: 100%;
   margin: 50px 0px 0px 20px;
@@ -83,6 +77,7 @@ header {
 .Fonctionnement {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   gap: 25px;
   margin: 30px 20px 70px 20px;
   &__Choisissez {
@@ -117,23 +112,23 @@ header {
   }
 }
 
+/* ENCART RESTAURANT */
 .Wrap {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   gap: 15px;
   background-color:#F6F6F6;
-  height: fit-content;
   padding-bottom: 60px;
   &__Titre {
+    font-weight: 800;
     margin: 60px 0px 0px 20px;
     flex: 100%;
   }
   .Card {
     margin: 20px 20px 0px 20px;
     min-width: 335px;
-    max-width: 400px;
-    flex: 1 1 auto;
+    flex: 1 1 500px;
     height: auto;
     background-color: #FFFFFF;
     border-radius: 10px;
@@ -141,6 +136,7 @@ header {
     text-decoration: none;
     color: #000000;
     transform: scale(1);
+    position: relative;
     img {
       height: 175px;
       width: 100%;
@@ -159,10 +155,12 @@ header {
     h3 {
       margin:0px;
       font-size: 18px;
+      font-weight: 800;
     }
     p {
       margin:10px 0px 0px 0px;
       font-size: 15px;
+      font-weight: 500;
     }
     }
     &__Like {
@@ -176,10 +174,22 @@ header {
       }
       @include AnimationCoeur;
     }
+  .Nouveau {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    background-color: $ColorTertiaire;
+    border-radius: 3px;
+    text-align: center;
+    font-size: small;
+    font-weight: 600;
+    color: #008766;
   }
+  } 
   }
 
-
+/* FOOTER */
 Footer {
   width: 100%;
   margin: auto;

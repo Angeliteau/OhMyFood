@@ -1,8 +1,7 @@
 .ImageTop {
   width: 100%;
   height: 260px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   position: relative;
   z-index: -1;
 }
@@ -50,15 +49,14 @@
 }
 .WrapMenu__Top .fa {
   opacity: 0;
-  background: -webkit-linear-gradient(#9356DC, #FF79DA);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: linear-gradient(#9356DC, #FF79DA);
+  background-clip: content-box;
+  color: transparent;
   cursor: pointer;
 }
 .WrapMenu__Top .fa:hover {
   opacity: 1;
-  -webkit-animation: Heart 200ms ease-out;
-          animation: Heart 200ms ease-out;
+  animation: Heart 200ms ease-out;
 }
 .WrapMenu .TitrePlat {
   width: 50px;
@@ -78,20 +76,16 @@
   border-radius: 15px;
   padding: 12px 0px 12px 10px;
   overflow: hidden;
-  -webkit-animation: LoadingPage 1s backwards ease-in-out;
-          animation: LoadingPage 1s backwards ease-in-out;
+  animation: LoadingPage 1s backwards ease-in-out;
 }
 .WrapMenu .Entrees--delay2 {
-  -webkit-animation-delay: 100ms;
-          animation-delay: 100ms;
+  animation-delay: 100ms;
 }
 .WrapMenu .Entrees--delay3 {
-  -webkit-animation-delay: 200ms;
-          animation-delay: 200ms;
+  animation-delay: 200ms;
 }
 .WrapMenu .Entrees--delay4 {
-  -webkit-animation-delay: 300ms;
-          animation-delay: 300ms;
+  animation-delay: 300ms;
 }
 .WrapMenu .Entrees__Texte {
   white-space: nowrap;
@@ -143,41 +137,26 @@
   transform: rotate(360deg);
 }
 .WrapMenu .Entrees:hover h3 {
-  -webkit-animation: Text 300ms ease-in-out both;
-          animation: Text 300ms ease-in-out both;
+  animation: Text 300ms ease-in-out both;
 }
 .WrapMenu .Entrees:hover h4 {
-  -webkit-animation: Text 300ms ease-in-out both;
-          animation: Text 300ms ease-in-out both;
+  animation: Text 300ms ease-in-out both;
 }
 .WrapMenu .Commander__Boutton {
-  width: 180px;
+  margin: 30px auto 60px auto;
+  width: 220px;
   height: 50px;
-  margin: 50px auto 80px auto;
   border-radius: 50px;
   border: none;
+  font-size: 14px;
   font-weight: 600;
   background: linear-gradient(130deg, rgb(234, 114, 218) 0%, rgb(161, 91, 220) 67%);
   color: #EAEAEA;
   box-shadow: 10px 10px 34px -18px rgba(0, 0, 0, 0.75);
 }
 .WrapMenu .Commander__Boutton:hover {
-  background: linear-gradient(130deg, rgb(230, 144, 218) 0%, rgb(172, 116, 219) 67%);
+  background: linear-gradient(130deg, rgb(235, 132, 221) 0%, rgb(167, 101, 221) 67%);
   box-shadow: 7px 5px 16px 3px rgba(0, 0, 0, 0.42);
-}
-
-@-webkit-keyframes Heart {
-  0% {
-    opacity: 0;
-    transform: scale(0);
-  }
-  80% {
-    transform: scale(1.15);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
 }
 
 @keyframes Heart {
@@ -191,20 +170,6 @@
   100% {
     opacity: 1;
     transform: scale(1);
-  }
-}
-@-webkit-keyframes Loader {
-  0% {
-    z-index: 100;
-    opacity: 1;
-  }
-  90% {
-    z-index: 100;
-    opacity: 0.8;
-  }
-  100% {
-    z-index: -1;
-    opacity: 0;
   }
 }
 @keyframes Loader {
@@ -221,30 +186,12 @@
     opacity: 0;
   }
 }
-@-webkit-keyframes Jump {
-  0% {
-    transform: translateY(0px);
-  }
-  100% {
-    transform: translateY(-20px);
-  }
-}
 @keyframes Jump {
   0% {
     transform: translateY(0px);
   }
   100% {
     transform: translateY(-20px);
-  }
-}
-@-webkit-keyframes LoadingPage {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0px);
   }
 }
 @keyframes LoadingPage {
@@ -255,16 +202,6 @@
   100% {
     opacity: 1;
     transform: translateY(0px);
-  }
-}
-@-webkit-keyframes Text {
-  0% {
-    text-overflow: clip;
-    overflow: visible;
-  }
-  100% {
-    text-overflow: ellipsis;
-    overflow: hidden;
   }
 }
 @keyframes Text {
@@ -279,14 +216,14 @@
 }
 body {
   margin: auto;
-  padding: auto;
   min-width: 375px;
+  font-family: "Raleway";
   max-width: 1440px;
-  font-family: "Raleway", sans-serif;
   box-sizing: border-box;
   counter-reset: compteListe;
 }
 
+/* LOADER CHARGEMENT PAGE */
 .Loader {
   display: flex;
   justify-content: center;
@@ -297,8 +234,7 @@ body {
   background-color: #FFFFFF;
   left: 0px;
   opacity: 1;
-  -webkit-animation: Loader 2s forwards;
-          animation: Loader 2s forwards;
+  animation: Loader 2s forwards;
 }
 .Loader__Wrap {
   display: flex;
@@ -313,18 +249,15 @@ body {
 }
 .Loader__Wrap__Dot:nth-child(1) {
   background-color: #9356DC;
-  -webkit-animation: Jump 500ms alternate infinite ease-in-out;
-          animation: Jump 500ms alternate infinite ease-in-out;
+  animation: Jump 500ms alternate infinite ease-in-out;
 }
 .Loader__Wrap__Dot:nth-child(2) {
   background-color: #FF79DA;
-  -webkit-animation: Jump 500ms 200ms alternate infinite ease-in-out;
-          animation: Jump 500ms 200ms alternate infinite ease-in-out;
+  animation: Jump 500ms 200ms alternate infinite ease-in-out;
 }
 .Loader__Wrap__Dot:nth-child(3) {
   background-color: #99E2D0;
-  -webkit-animation: Jump 500ms 400ms alternate infinite ease-in-out;
-          animation: Jump 500ms 400ms alternate infinite ease-in-out;
+  animation: Jump 500ms 400ms alternate infinite ease-in-out;
 }
 
 header {
@@ -337,6 +270,7 @@ header img {
   margin-bottom: 10px;
 }
 
+/* BOUTON LOCALISATION DU DEVICE */
 .Localisation__Boutton {
   display: flex;
   align-items: center;
@@ -352,6 +286,7 @@ header img {
   cursor: pointer;
 }
 
+/* ENCART DE BIENVENUE */
 .Bienvenue {
   display: flex;
   align-items: center;
@@ -372,7 +307,7 @@ header img {
   font-weight: 400;
 }
 .Bienvenue__Boutton {
-  margin: 30px 20px 60px 20px;
+  margin: 30px auto 60px auto;
   width: 220px;
   height: 50px;
   border-radius: 50px;
@@ -388,8 +323,9 @@ header img {
   box-shadow: 7px 5px 16px 3px rgba(0, 0, 0, 0.42);
 }
 
+/* ENCART FONCTIONNEMENT */
 .Fonctionnement__Titre {
-  font-weight: 700;
+  font-weight: 800;
   margin: 0px;
   width: 100%;
   margin: 50px 0px 0px 20px;
@@ -398,6 +334,7 @@ header img {
 .Fonctionnement {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   gap: 25px;
   margin: 30px 20px 70px 20px;
 }
@@ -443,26 +380,24 @@ header img {
   font-size: 16px;
 }
 
+/* ENCART RESTAURANT */
 .Wrap {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   gap: 15px;
   background-color: #F6F6F6;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
   padding-bottom: 60px;
 }
 .Wrap__Titre {
+  font-weight: 800;
   margin: 60px 0px 0px 20px;
   flex: 100%;
 }
 .Wrap .Card {
   margin: 20px 20px 0px 20px;
   min-width: 335px;
-  max-width: 400px;
-  flex: 1 1 auto;
+  flex: 1 1 500px;
   height: auto;
   background-color: #FFFFFF;
   border-radius: 10px;
@@ -470,16 +405,16 @@ header img {
   text-decoration: none;
   color: #000000;
   transform: scale(1);
+  position: relative;
 }
 .Wrap .Card img {
   height: 175px;
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 10px 10px 0px 0px;
 }
 .Wrap .Card:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 .Wrap .Card__Instructions {
   display: flex;
@@ -492,10 +427,12 @@ header img {
 .Wrap .Card__Instructions__Texte h3 {
   margin: 0px;
   font-size: 18px;
+  font-weight: 800;
 }
 .Wrap .Card__Instructions__Texte p {
   margin: 10px 0px 0px 0px;
   font-size: 15px;
+  font-weight: 500;
 }
 .Wrap .Card__Instructions__Like {
   margin-right: 20px;
@@ -508,17 +445,29 @@ header img {
 }
 .Wrap .Card__Instructions .fa {
   opacity: 0;
-  background: -webkit-linear-gradient(#9356DC, #FF79DA);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: linear-gradient(#9356DC, #FF79DA);
+  background-clip: content-box;
+  color: transparent;
   cursor: pointer;
 }
 .Wrap .Card__Instructions .fa:hover {
   opacity: 1;
-  -webkit-animation: Heart 200ms ease-out;
-          animation: Heart 200ms ease-out;
+  animation: Heart 200ms ease-out;
+}
+.Wrap .Card .Nouveau {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px;
+  background-color: #99E2D0;
+  border-radius: 3px;
+  text-align: center;
+  font-size: small;
+  font-weight: 600;
+  color: #008766;
 }
 
+/* FOOTER */
 Footer {
   width: 100%;
   margin: auto;
@@ -545,4 +494,6 @@ Footer .Footer__Wrap a {
 }
 Footer .Footer__Wrap i {
   margin-right: 5px;
-}/*# sourceMappingURL=styles.css.map */
+}
+
+/*# sourceMappingURL=styles.css.map */

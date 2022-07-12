@@ -13,8 +13,7 @@
     background-color: #FFFFFF;
     position: relative;
     right: 80px;
-    cursor: pointer;
-    
+    cursor: pointer;    
 }
 
 .WrapMenu {
@@ -38,7 +37,7 @@
         justify-content: space-between;
         h1 {
             margin: 0px 0px 0px 10px;
-            font-family: 'Shrikhand', cursive;
+            font-family: $FontTextTitre;
         }
         &__Like {
             margin-right: 25px;
@@ -132,19 +131,10 @@
     }
 
     .Commander__Boutton {
-        width: 180px;
-        height: 50px;
-        margin: 50px auto 80px auto;
-        border-radius: 50px;
-        border: none;
-        font-weight: 600;
-        background: linear-gradient(130deg, rgba(234,114,218,1) 0%, rgba(161,91,220,1) 67%);
-        color: #EAEAEA;
-        box-shadow: $BoxShadow;
+        @include BoutonPrincipale;
       }
       .Commander__Boutton:hover {
-        background: linear-gradient(130deg, rgba(230,144,218,1) 0%, rgba(172,116,219,1) 67%);
-        box-shadow: 7px 5px 16px 3px rgba(0,0,0,0.42);
+        @include BoutonPrincipaleHover;
       }
 
 }
