@@ -35,8 +35,10 @@
   justify-content: space-between;
 }
 .WrapMenu__Top h1 {
+  width: 80%;
   margin: 0px 0px 0px 10px;
   font-family: "Shrikhand", cursive;
+  position: relative;
 }
 .WrapMenu__Top__Like {
   margin-right: 25px;
@@ -50,13 +52,18 @@
 .WrapMenu__Top .fa {
   opacity: 0;
   background: linear-gradient(#9356DC, #FF79DA);
-  background-clip: content-box;
+  background-clip: text;
+  -webkit-background-clip: text;
   color: transparent;
   cursor: pointer;
 }
 .WrapMenu__Top .fa:hover {
   opacity: 1;
   animation: Heart 200ms ease-out;
+}
+.WrapMenu__Top .fa:active {
+  content: "";
+  opacity: 1;
 }
 .WrapMenu .TitrePlat {
   width: 50px;
@@ -446,13 +453,18 @@ header img {
 .Wrap .Card__Instructions .fa {
   opacity: 0;
   background: linear-gradient(#9356DC, #FF79DA);
-  background-clip: content-box;
+  background-clip: text;
+  -webkit-background-clip: text;
   color: transparent;
   cursor: pointer;
 }
 .Wrap .Card__Instructions .fa:hover {
   opacity: 1;
   animation: Heart 200ms ease-out;
+}
+.Wrap .Card__Instructions .fa:active {
+  content: "";
+  opacity: 1;
 }
 .Wrap .Card .Nouveau {
   position: absolute;

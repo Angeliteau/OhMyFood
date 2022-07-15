@@ -36,8 +36,10 @@
         align-items: center;
         justify-content: space-between;
         h1 {
+            width: 80%;
             margin: 0px 0px 0px 10px;
             font-family: $FontTextTitre;
+            position: relative;
         }
         &__Like {
             margin-right: 25px;
