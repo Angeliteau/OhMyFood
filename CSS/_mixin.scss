@@ -50,7 +50,8 @@
   .fa {
     opacity: 0;
     background: linear-gradient($ColorPrimaire, $ColorSecondaire);
-    background-clip: content-box;
+    background-clip: text;
+    -webkit-background-clip: text;
     color: transparent;
     cursor: pointer;
     
@@ -58,6 +59,10 @@
   .fa:hover {
     opacity: 1;
     animation: Heart 200ms ease-out;
+  }
+  .fa:active {
+    content: "";
+    opacity: 1;
   }
 }
 
