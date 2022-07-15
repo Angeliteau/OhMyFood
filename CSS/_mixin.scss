@@ -60,10 +60,6 @@
     opacity: 1;
     animation: Heart 200ms ease-out;
   }
-  .fa:active {
-    content: "";
-    opacity: 1;
-  }
 }
 
 @mixin Loader {
