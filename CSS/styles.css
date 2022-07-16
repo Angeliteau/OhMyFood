@@ -61,10 +61,6 @@
   opacity: 1;
   animation: Heart 200ms ease-out;
 }
-.WrapMenu__Top .fa:active {
-  content: "";
-  opacity: 1;
-}
 .WrapMenu .TitrePlat {
   width: 50px;
   border-bottom: 2px solid #99E2D0;
@@ -461,10 +457,6 @@ header img {
 .Wrap .Card__Instructions .fa:hover {
   opacity: 1;
   animation: Heart 200ms ease-out;
-}
-.Wrap .Card__Instructions .fa:active {
-  content: "";
-  opacity: 1;
 }
 .Wrap .Card .Nouveau {
   position: absolute;
