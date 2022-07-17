@@ -1,5 +1,5 @@
 
-
+  /* IMAGE HEADER */
 .ImageTop {
     width: 100%;
     height: 260px;
@@ -7,7 +7,7 @@
     position: relative; 
     z-index: -1;
 }
-
+  /* BOUTTON DE RETOUR */
 .BoutonRetour {
     border: none;
     background-color: #FFFFFF;
@@ -15,7 +15,7 @@
     right: 80px;
     cursor: pointer;    
 }
-
+  /* ENCART DES MENUS */
 .WrapMenu {
     position: relative;
     max-width: 900px;

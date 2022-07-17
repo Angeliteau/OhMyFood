@@ -1,3 +1,4 @@
+/* KEYFRAME COEUR 'LIKE' */
 @keyframes Heart {
     0%    { opacity: 0; 
             transform:scale(0) }
@@ -6,6 +7,7 @@
             transform:scale(1)  }
   }
 
+  /* KEYFRAME CHARGEMENT PAGE */
   @keyframes Loader {
     0% {
       z-index: 100;
@@ -25,7 +27,6 @@
     0% {transform: translateY(0px);}
     100% {transform: translateY(-20px);}
   }
-
   
 @keyframes LoadingPage {
     0% {
@@ -41,6 +42,7 @@
     }
 }
 
+/* KEYFRAME ADAPTATION TEXTE DES PLATS */
 @keyframes Text {
     0% {text-overflow:clip;
         overflow: visible;
