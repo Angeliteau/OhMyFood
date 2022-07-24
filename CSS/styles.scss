@@ -7,7 +7,7 @@
 body {
   margin: auto;
   min-width: 375px;
-  font-family: 'Raleway';
+  font-family: $FontText;
   max-width: 1440px;
   box-sizing: border-box;
   counter-reset: compteListe;
